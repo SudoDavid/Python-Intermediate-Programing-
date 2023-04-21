@@ -1,0 +1,22 @@
+def myRange(start, stop=None, step=1):
+    if stop is None:
+        stop = start
+        start = 0
+
+    result = []
+    i = start
+    while (step > 0 and i < stop) or (step < 0 and i > stop):
+        result.append(i)
+        i += step
+
+    return result
+
+
+def main():
+    print(myRange(10))
+    print(myRange(1, 10))
+    print(myRange(1, 10, 2))
+    print(myRange(10, 1, -1))
+
+main()
+
