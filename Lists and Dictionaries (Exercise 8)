@@ -1,1 +1,36 @@
 
+# Take the input file name
+
+# Open the input file and initialize list of unique words
+
+# Add the unique words in the file to the list
+
+# Prints the unique words and their frequencies,
+# in alphabetical order
+
+import string
+
+def clean_word(word):
+    """
+    Helper function to clean the word by removing leading/trailing punctuation and converting to lowercase.
+    """
+    word = word.lower().strip(string.punctuation)
+    return word
+
+def display_concordance(file_name):
+    """
+    Function to display a concordance of unique words and their frequencies in alphabetical order.
+    """
+    word_counts = {}
+    with open(file_name, 'r') as file:
+        for line in file:
+            for word in line.split():
+                word = clean_word(word)
+                if word:
+                    word_counts[word] = word_counts.get(word, 0) + 1
+    
+    for word in sorted(word_counts):
+        print(f"{word}: {word_counts[word]}")
+
+# Example usage:
+display_concordance('randomwords.txt')
