@@ -1,1 +1,19 @@
+#Write a program that accepts the lengths of three sides of a triangle as inputs. 
+#The program output should indicate whether or not the triangle is an equilateral triangle.
+
+
+# Request the inputs
+x = int(input("Enter: "))
+y = int(input("Enter: "))
+z = int(input("Enter: "))
+
+# Determine the result and display it
+if x == y and x == z:
+    print("is equilateral")
+else:
+    print("not equilateral")
+
+
+
+
 
