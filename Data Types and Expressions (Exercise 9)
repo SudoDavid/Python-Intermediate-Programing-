@@ -1,15 +1,16 @@
-#You can calculate the surface area of a cube if you know the length of an edge. 
-#Write a program that takes the length of an edge (an integer) as input and prints the cube’s surface area as output
-#change equation for anything other than cube's.
-######################
+# Write a program that takes as input a number of kilometers and 
+# prints the corresponding number of nautical miles. Use the following approximations:
 
-import math
-# Request the input
-r = int(input("Please enter the edge length: \n"))
+#A kilometer represents 1/10,000 of the distance between the North Pole and the equator.
+#There are 90 degrees, containing 60 minutes of arc each, between the North Pole and the equator.
+#A nautical mile is 1 minute of an arc.
 
-# Compute the surface area =  2π r h + 2π r²
-surface_area = (6*r*r)
+# Taking kilometers input from the user
+kilometers = float(input("Enter value in kilometers: "))
 
-# Display the surface area
-print(surface_area)
+# conversion factor
+conv_fac = 0.54
 
+# calculate miles
+Nm = kilometers * conv_fac
+print(Nm)
