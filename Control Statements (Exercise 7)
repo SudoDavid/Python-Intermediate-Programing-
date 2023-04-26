@@ -1,1 +1,22 @@
 
+
+#Definitions
+def calculateSalary(startSalary, percentIncrease, numberYears):
+  for year in numberYears:
+
+    print(year, '{:.2f}'.format(startSalary))
+    salaryInc = startSalary*percentIncrease
+    newSalary = startSalary+salaryInc
+    startSalary = newSalary
+
+#User Input
+startSalary = float(input("Please enter beginning salary: "))
+percentIncrease = (float(input("Please enter percentage increase: ")) / 100)
+numberYears = list(range(1,(int(input("Please enter number of years in schedule: ")) + 1)))
+
+#Method Call
+calculateSalary(startSalary, percentIncrease, numberYears)
+
+
+
+
