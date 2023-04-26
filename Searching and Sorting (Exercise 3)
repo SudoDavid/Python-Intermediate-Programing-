@@ -1,0 +1,24 @@
+
+
+#Python’s pow function returns the result of raising a number to a given power. 
+#Define a function expo that performs this task, and state its computational complexity using big-O notation.
+#The first argument of this function is the number, and the second argument is the exponent (non-negative numbers only). 
+#You may use either a loop or a recursive function in your implementation.
+##############################################################################
+
+def expo(base, exponent):
+    # Write your function here
+    if exponent == 0:
+        return 1
+    elif exponent % 2 == 0:
+        return expo(base * base, exponent // 2)
+    else:
+        return base * expo(base, exponent -1)
+        
+        
+def main():
+    """Tests with powers of 2."""
+    for exponent in range (5):
+        print(exponent, expo(2, exponent))
+
+main()
