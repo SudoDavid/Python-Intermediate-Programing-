@@ -1,6 +1,13 @@
 def isSorted(lyst):
     """Returns True if lyst is sorted in ascending
     order or False otherwise."""
+    if len(lyst) < 2:
+        return True
+    for i in range(len(lyst)-1):
+        if lyst[i] > lyst[i+1]:
+            return False
+    else: 
+        return True
 
 def main():
     lyst = []
@@ -13,3 +20,4 @@ def main():
     print(isSorted(lyst))
 
 main()
+
