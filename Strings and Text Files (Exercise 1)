@@ -1,1 +1,24 @@
 
+#Define Method
+def caesar_cipher(code, distance):
+    encrypted_text= ""
+    for char in code:
+        if char.isprintable():
+            char_code = ord(char)
+            #add shift position after converting to ASCII
+            new_char_code = (char_code + distance) % 256
+            encrypted_text += chr(new_char_code)
+        else:
+            encrypted_text += char
+    return encrypted_text
+
+
+# Prompt user to enter a message
+code = input("Please enter a message. \n")
+
+# Prompt user to enter a shift
+distance = int(input("Please enter # of characters to shift for cipher."))
+
+# Print the encrypted message
+encrypted_text = caesar_cipher(code, distance)
+print(encrypted_text)
