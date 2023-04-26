@@ -1,0 +1,39 @@
+#The list method reverse reverses the elements in the list. 
+#Define a function named reverse that reverses the elements in its list argument (without using the method reverse!). 
+#Try to make this function as efficient as possible, and state its computational complexity using big-O notation.
+##############################################################
+
+def reverse(lyst):
+    # Define your reverse function here without using the reverse function.
+    size = len(lyst)
+    arr = lyst
+
+    if size == 1:
+        return arr
+        
+    elif size == 2:
+        arr[0],arr[1],=arr[1],arr[0]
+        return arr
+    else:
+        i=0
+        while(i<size//2):
+         #swap present and preceding numbers at time and jump to second element after swap
+            arr[i],arr[size-i-1]=arr[size-i-1],arr[i]
+       
+    #skip if present and preceding numbers indexes are same
+            if((i!=i+1 and size-i-1 != size-i-2) and (i!=size-i-2 and size-i-1!=i+1)):
+                arr[i+1],arr[size-i-2]=arr[size-i-2],arr[i+1]
+            i+=2
+        return arr
+ 
+        
+def main():
+    """Tests with two lists."""
+    lyst = list(range(4))
+    reverse(lyst)
+    print(lyst)
+    lyst = list(range(3))
+    reverse(lyst)
+    print(lyst)
+
+main()
